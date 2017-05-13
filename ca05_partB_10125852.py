@@ -9,42 +9,67 @@ author: 10125852 InSun Ahn
 CA05 Part B: Refactoring calculator using lambda, map, reduce, filter functions
 '''
 
-import math
+import numpy
 
-class calculator(object):
+class Calculator(object):
     ''' class for 10 calculator functions to handle listed values.'''
   
     # Add all elements in a list and return the total.
-    def add(self, values):
-        return reduce(lambda x, y: x + y, self.values)
+    def sum(self, values):
+        return reduce(lambda x, y: x + y, values)
    
     # Return the sum of values in two lists.
-    def sum(self, list1, list2):
-        return map(lambda x, y: x + y, self.list1 + self.list2)
+    def add(self, list1, list2):
+        return map(lambda x, y: x + y, list1, list2)
+    
+    # Multiply all elements in a list.
+    def multiply(self, values):
+        return reduce(lambda x, y: x * y, values)
     
     # Return the maximum value in a list.
     def max(self, values):
-        return reduce(lambda x, y: x if (x>y) else y, self.values)
+        return reduce(lambda x, y: x if (x>y) else y, values)
     
     # Return the minimum value in a list.
     def min(self, values):
-        return reduce(lambda x, y: x if (x<y) else y, self.values)
+        return reduce(lambda x, y: x if (x<y) else y, values)
     
     # Return only even numbers among the listed values.
     def is_even(self, values):
-        return filter(lambda x: x % 2 == 0, self.values)
+        return filter(lambda x: x % 2 == 0, values)
     
     # Return only odd numbers among listed values.
     def is_odd(self, values):
-        return filter(lambda x: x % 2 == 1, self.values)
+        return filter(lambda x: x % 2 == 1, values)
     
-    # Return the values that are above mean in a list.
+    # Get average of the values in a list.
+    def mean(self, values):
+        return numpy.mean(values)
+        
+    # Filter the values that are above mean in a list.
     def above_mean(self, values, mean):
         return filter(lambda x: x > mean, values)
     
-    # Return the values that are below mean in a list.
+    # Filter the values that are below mean in a list.
     def below_mean(self, values, mean):
         return filter(lambda x: x < mean, values)    
+        
+
     
 
-        
+myCal = Calculator()
+
+a = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+b = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+
+print myCal.add(a,b)
+print myCal.sum(a)
+print myCal.is_even(a)
+print myCal.is_odd(b)
+print myCal.max(a)
+print myCal.min(a)
+print myCal.multiply(a)
+print myCal.mean(a)
+print myCal.mean(b)
+print myCal.above_mean(a, myCal.mean(a))
+print myCal.below_mean(b, myCal.mean(b))

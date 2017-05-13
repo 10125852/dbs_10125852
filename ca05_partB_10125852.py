@@ -9,10 +9,10 @@ author: 10125852 InSun Ahn
 CA05 Part B: Refactoring calculator using lambda, map, reduce, filter functions
 '''
 
-import numpy
+import math 
 
 class Calculator(object):
-    ''' class for 10 calculator functions to handle listed values.'''
+    ''' class for 11 calculator functions to handle listed values.'''
   
     # Add all elements in a list and return the total.
     def sum(self, values):
@@ -42,9 +42,9 @@ class Calculator(object):
     def is_odd(self, values):
         return filter(lambda x: x % 2 == 1, values)
     
-    # Get average of the values in a list.
+    # Get average of the values in a list for the below above/below mean functions.
     def mean(self, values):
-        return numpy.mean(values)
+        return np.mean(values)
         
     # Filter the values that are above mean in a list.
     def above_mean(self, values, mean):
@@ -53,15 +53,24 @@ class Calculator(object):
     # Filter the values that are below mean in a list.
     def below_mean(self, values, mean):
         return filter(lambda x: x < mean, values)    
-        
-
+    
+    # Get squared values of each element in a list.
+    def squared(self, values):
+        return map(lambda x: x ** 2, values)
+    
+    # Get square root of each element in a list 
+    def sqrt(self, values):
+        return map(lambda x: math.sqrt(x), values)
     
 
+    
 myCal = Calculator()
 
+# Give varibles for two sample lists
 a = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 b = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
 
+# Excute calculations for the above lists.
 print myCal.add(a,b)
 print myCal.sum(a)
 print myCal.is_even(a)
@@ -73,3 +82,5 @@ print myCal.mean(a)
 print myCal.mean(b)
 print myCal.above_mean(a, myCal.mean(a))
 print myCal.below_mean(b, myCal.mean(b))
+print myCal.squared(a)
+print myCal.sqrt(a)

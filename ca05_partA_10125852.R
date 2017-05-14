@@ -55,11 +55,13 @@ my_log <- function(x, y){
 }
 
 
+# Define variables for sample values/vectors for testing above functions.
 a = 7
 b = 5
 c <- c(1, 2, 3, 4)
 d <- c(5, 6, 7, 8)
 
+# Apply above functions to sample values/vectors.
 my_addition(a, b)
 my_addition(c, d)
 
@@ -87,6 +89,7 @@ my_cos(c)
 my_tan(b)
 my_tan(d)
 
-my_log(100, base = 2)
-my_log(a, base = b)
-my_log(d, base = c)
+my_log(100, 10)
+my_log(125, 5)
+my_log(b, a)
+my_log(d, c)

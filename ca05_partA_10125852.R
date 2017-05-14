@@ -25,9 +25,34 @@ my_division <- function(x,y){
   x / y
 }
 
+# Function 5 - compute exponentiation(power) base = x, exponent = y
+my_power <- function(x,y){
+  x**y
+}
 
+# Function 6 - compute square root of a value/vector.
+my_sqrt <- function(x){
+  sqrt(x)
+}
 
+# Trigonometric Functions 7-9
+## Function 7 - Sine
+my_sin(x) <- function(x){
+  sin(x)
+}
+## Function 8 - Cosine
+my_cos(x) <- function(x){
+  cos(x)
+}
+## Function 9 - Tangent
+my_tan(x) <- function(x){
+  tan(x)
+}
 
+# Function 10 - Compute logarithms of a value/vector x and base = y. 
+my_log(x) <- function(x){
+  logb(x, base = y)
+}
 
 
 a = 7
@@ -39,3 +64,11 @@ my_addition(a, b)
 my_addition(c, d)
 my_subtraction(a, b)
 my_subtraction(c, d)
+my_multiplication(a, b)
+my_multiplication(c, d)
+my_division(a, b)
+my_division(c, d)
+my_power(a, b)
+my_power(c, d)
+my_sqrt(25)
+my_sqrt(c)

@@ -9,7 +9,9 @@ author: 10125852 InSun Ahn
 CA05 Part B: Refactoring calculator using lambda, map, reduce, filter functions
 '''
 
-import math 
+# Import math & numpy to use functions.
+import numpy as np
+import math
 
 class Calculator(object):
     ''' class for 11 calculator functions to handle listed values.'''
@@ -62,7 +64,6 @@ class Calculator(object):
     def sqrt(self, values):
         return map(lambda x: math.sqrt(x), values)
     
-
     
 myCal = Calculator()
 
